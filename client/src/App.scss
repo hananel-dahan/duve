@@ -1,0 +1,39 @@
+@import './public/styles/_variables.scss';
+
+.actions-row {
+    height: 52px;
+    width: 100%;
+    background: $white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 12px;
+    box-sizing: border-box;
+}
+
+.green-button {
+    border: 0px;
+    background: $green;
+}
+.gray-button {
+    color: $gray;
+    background: $white;
+    border: 1px solid $gray;
+}
+.button {
+    padding: 6px 24px;
+    margin-left: 10px;
+    height: 35px;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 162%;
+    cursor: pointer;
+}
+
+.align-right {
+    margin-left: auto;
+    margin-right: 0px;
+}
+
