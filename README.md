@@ -17,5 +17,6 @@
 # Client
 
 - `npm install`
-- `npm run serve` to start the Frontend
+<!-- - `npm run serve` to start the Frontend -->
 - `npm run watch` to start the Frontend in dev mode
+
