@@ -1,6 +1,6 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
-import Reservations from "./pages/Reservations";
+import { Route, Routes } from "react-router-dom";
+import ReservationsList from "./pages/ReservationsList";
 import Reservation from "./pages/Reservation";
 import { NEW_ROUTE } from "./constants";
 import "./App.scss";
@@ -8,12 +8,12 @@ import "./App.scss";
 function App() {
   return (
     <>
-      <Switch>
-        <Route exact path="/" component={Reservations} />
-        <Route exact path="/:id" component={Reservation} />
-        <Route exact path={`/${NEW_ROUTE}`} component={Reservation} />
-      </Switch>
-    </>
+      <Routes>
+        <Route path="/" element={<ReservationsList/>} />
+        <Route path="/:id" element={<Reservation/>} />
+        <Route path={`/${NEW_ROUTE}`} element={<Reservation/>} />
+      </Routes>
+    </> 
   );
 }
 

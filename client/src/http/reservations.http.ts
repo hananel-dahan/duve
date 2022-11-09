@@ -3,27 +3,27 @@ import { BASE_URL, RESERVATIONS_API } from "../constants";
 
 export async function getAllReservations(): Promise<IReservation[]> {
   try {
-    let res = await fetch(`${BASE_URL}/${RESERVATIONS_API}`, { method: "GET" });
+    const res = await fetch(`${BASE_URL}/${RESERVATIONS_API}`, { method: "GET" });
     return await res.json();
   } catch (error) {
     console.log(error);
-    return [];
+    throw new Error(error);
   }
 }
 
 export async function getReservationById(id: string): Promise<IReservation | null> {
   try {
-    let res = await fetch(`${BASE_URL}/${RESERVATIONS_API}/${id}`, { method: "GET" });
+    const res = await fetch(`${BASE_URL}/${RESERVATIONS_API}/${id}`, { method: "GET" });
     return await res.json();
   } catch (error) {
     console.log(error);
-    return null;
+    throw new Error(error);
   }
 }
 
 export async function createReservation(reservation: IReservation): Promise<IReservation | null> {
   try {
-    let res = await fetch(`${BASE_URL}/${RESERVATIONS_API}`,
+    const res = await fetch(`${BASE_URL}/${RESERVATIONS_API}`,
       { 
         method: "POST", 
         body: JSON.stringify(reservation),
@@ -34,13 +34,13 @@ export async function createReservation(reservation: IReservation): Promise<IRes
     return await res.json();
   } catch (error) {
     console.log(error);
-    return null;
+    throw new Error(error);
   }
 }
 
 export async function updateReservation(reservation: IReservation): Promise<IReservation | null> {
   try {
-    let res = await fetch(`${BASE_URL}/${RESERVATIONS_API}/${reservation.id}`,
+    const res = await fetch(`${BASE_URL}/${RESERVATIONS_API}/${reservation.id}`,
       {
         method: "PUT",
         body: JSON.stringify(reservation),
@@ -51,20 +51,20 @@ export async function updateReservation(reservation: IReservation): Promise<IRes
     return await res.json();
   } catch (error) {
     console.log(error);
-    return null;
+    throw new Error(error);
   }
 }
 
 export async function deleteReservation(id: string): Promise<IReservation | null> {
   try {
-    let res = await fetch(`${BASE_URL}/${RESERVATIONS_API}/${id}`,
+    const res = await fetch(`${BASE_URL}/${RESERVATIONS_API}/${id}`,
       {
         method: "DELETE",
       });
     return await res.json();
   } catch (error) {
     console.log(error);
-    return null;
+    throw new Error(error);
   }
 }
 

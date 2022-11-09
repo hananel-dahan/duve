@@ -1,7 +1,7 @@
 module.exports = app => {
   const reservations = require("../controllers/reservations.controller.js");
 
-  var router = require("express").Router();
+  const router = require("express").Router();
 
   // Initialize new Reservations
   router.post("/initialize", reservations.initialize);

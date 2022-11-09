@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { getAllReservations } from "../../http/reservations.http";
 import { IReservation } from "../../models/reservation.interface";
 import "./styles.scss";
@@ -28,7 +28,11 @@ const ReservationsTable = () => {
       </div>
       {data.length &&
         data.map((item) => (
-          <Link to={"/" + item.id} key={item.id} style={{ textDecoration: 'none' }}>
+          <Link
+            to={"/" + item.id}
+            key={item.id}
+            style={{ textDecoration: "none" }}
+          >
             <div className="table-row" key={item.id}>
               <div className="table-cell">{item.firstName}</div>
               <div className="table-cell">{item.lastName}</div>
@@ -36,10 +40,14 @@ const ReservationsTable = () => {
               <div className="table-cell">{item.phone}</div>
               <div className="table-cell">{item.assignedRoom}</div>
               <div className="table-cell">
-                {new Date(item.checkIn).toDateString()}
+                {
+                  new Date(item.checkIn).toDateString() // Lazy date format
+                }
               </div>
               <div className="table-cell">
-                {new Date(item.checkOut).toDateString()}
+                {
+                  new Date(item.checkOut).toDateString() // Lazy date format
+                }
               </div>
             </div>
           </Link>

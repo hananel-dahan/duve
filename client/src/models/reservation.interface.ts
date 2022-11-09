@@ -6,7 +6,7 @@ export interface IReservation {
     phone: string;
     country: string;
     assignedRoom: string;
-    checkIn: Date;
-    checkOut: Date;
+    checkIn: number;
+    checkOut: number;
     bookingSource: string;
 }

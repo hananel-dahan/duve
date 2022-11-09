@@ -5,7 +5,7 @@ import { getAllReservations } from "../../http/reservations.http";
 import { IReservation } from "../../models/reservation.interface";
 import "./styles.scss";
 
-const Reservations = () => {
+const ReservationsList = () => {
   const [data, setData] = useState<IReservation[]>([]);
 
   useEffect(() => {
@@ -28,4 +28,4 @@ const Reservations = () => {
     </div>
   );
 };
-export default Reservations;
+export default ReservationsList;

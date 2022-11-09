@@ -1,5 +1,5 @@
 module.exports = (mongoose) => {
-  var schema = mongoose.Schema(
+  const schema = mongoose.Schema(
     {
       firstName: String,
       lastName: String,
@@ -7,8 +7,8 @@ module.exports = (mongoose) => {
       phone: String,
       country: String,
       assignedRoom: String,
-      checkIn: Date,
-      checkOut: Date,
+      checkIn: Number,
+      checkOut: Number,
       bookingSource: String,
     },
     { timestamps: true }
